@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendTableViewCell: UITableViewCell {
+class FriendTableViewCell: UITableViewCell, UIImagePickerControllerDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
