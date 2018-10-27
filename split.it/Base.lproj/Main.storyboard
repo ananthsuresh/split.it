@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="125.4872563718141"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend Table View Controller-->
         <scene sceneID="nBS-ei-uMD">
             <objects>
-                <viewController id="53g-bs-5X0" customClass="ViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="53g-bs-5X0" customClass="FriendTableViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t1T-EJ-SX2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,9 +73,15 @@
                                                     <rect key="frame" x="281" y="7" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="editFriend:" destination="yaX-ro-esc" eventType="touchUpInside" id="ifn-W4-QBL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="4K9-ov-Ndl" id="pdb-bk-CkF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -107,6 +113,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KkO-h2-Hit"/>
                     </view>
+                    <connections>
+                        <outlet property="friendTableView" destination="q4M-uY-UU8" id="T98-jL-gjQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inf-4V-xpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,8 +314,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cig-sC-PNM"/>
         <segue reference="rXx-hg-cOb"/>
         <segue reference="gW4-iE-ZNV"/>
-        <segue reference="LAd-uZ-G9T"/>
+        <segue reference="B2X-gK-tLv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@
 		18C8D8182182AD0E0055099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D8162182AD0E0055099C /* LaunchScreen.storyboard */; };
 		18C8D8232182AD0F0055099C /* split_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D8222182AD0F0055099C /* split_itTests.swift */; };
 		18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D82D2184F17B0055099C /* FriendTableViewCell.swift */; };
+		18C8D8302184F8C00055099C /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D82F2184F8C00055099C /* Friend.swift */; };
+		18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D8312184FAB10055099C /* FriendTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		18C8D8222182AD0F0055099C /* split_itTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = split_itTests.swift; sourceTree = "<group>"; };
 		18C8D8242182AD0F0055099C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C8D82D2184F17B0055099C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		18C8D82F2184F8C00055099C /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		18C8D8312184FAB10055099C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				18C8D8162182AD0E0055099C /* LaunchScreen.storyboard */,
 				18C8D8192182AD0E0055099C /* Info.plist */,
 				18C8D82D2184F17B0055099C /* FriendTableViewCell.swift */,
+				18C8D82F2184F8C00055099C /* Friend.swift */,
+				18C8D8312184FAB10055099C /* FriendTableViewController.swift */,
 			);
 			path = split.it;
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
+				18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */,
 				18C8D8102182AD0D0055099C /* ViewController.swift in Sources */,
 				18C8D80E2182AD0D0055099C /* AppDelegate.swift in Sources */,
+				18C8D8302184F8C00055099C /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
