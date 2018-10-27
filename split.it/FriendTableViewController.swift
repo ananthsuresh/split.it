@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     
@@ -129,8 +129,8 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func takePicture(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
         imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
         self.present(imagePickerController, animated:true, completion: nil)
     }
     
