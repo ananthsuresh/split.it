@@ -103,7 +103,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take Picture"/>
                                 <connections>
-                                    <action selector="takePicture:" destination="53g-bs-5X0" eventType="touchUpInside" id="xUW-CC-Hsd"/>
+                                    <action selector="takePicture:" destination="53g-bs-5X0" eventType="touchUpInside" id="knh-Pw-VZR"/>
                                     <segue destination="lYI-63-MLi" kind="show" id="azo-Td-7nM"/>
                                 </connections>
                             </button>

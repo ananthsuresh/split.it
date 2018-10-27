@@ -126,5 +126,17 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         friends += [friend1, friend2]
         
     }
+    
+    @IBAction func takePicture(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePickerController.sourceType = .camera
+        self.present(imagePickerController, animated:true, completion: nil)
+    }
+    
+    func imagePickercontroller(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        picker.dismiss(animated: true, completion: nil)
+    }
 
 }
