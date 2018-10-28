@@ -75,6 +75,7 @@
                                                     <state key="normal" title="Edit"/>
                                                     <connections>
                                                         <action selector="editFriend:" destination="yaX-ro-esc" eventType="touchUpInside" id="ifn-W4-QBL"/>
+                                                        <segue destination="Z86-Rl-fcg" kind="show" id="B9h-g2-2TX"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -260,10 +261,10 @@
             </objects>
             <point key="canvasLocation" x="753" y="2449"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Friend View Controller-->
         <scene sceneID="MZh-8n-iv9">
             <objects>
-                <viewController id="Z86-Rl-fcg" sceneMemberID="viewController">
+                <viewController id="Z86-Rl-fcg" customClass="AddFriendViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ale-8j-cGN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,6 +302,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
+                                    <action selector="doneClick:" destination="Z86-Rl-fcg" eventType="touchUpInside" id="gSR-AS-tJE"/>
                                     <segue destination="53g-bs-5X0" kind="show" id="B2X-gK-tLv"/>
                                 </connections>
                             </button>
@@ -308,6 +310,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dYV-ma-ofb"/>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="cce-Sp-aSG" id="Qbq-V1-kht"/>
+                        <outlet property="venmoUsername" destination="Yrs-nG-to0" id="aUb-dV-kcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5c-fa-qNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
