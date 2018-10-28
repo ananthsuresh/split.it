@@ -36,7 +36,7 @@ class AddItemViewController: UIViewController {
         guard let item = Item(name: itemNameField.text!, price: Double(priceField.text!)!) else {
             fatalError("Unable to instantiate item")
         }
-        items += [item]
+        itemsList += [item]
 
     }
  

@@ -8,7 +8,6 @@
 
 import UIKit
 
-var items = [Item]()
 class ItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var itemTableView: UITableView!
@@ -32,7 +31,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return itemsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +44,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         // Fetches the appropriate meal for the data source layout.
-        let item = items[indexPath.row]
+        let item = itemsList[indexPath.row]
         
         cell.nameLabel.text = item.name
         cell.priceLabel.text = String(item.price)
@@ -63,7 +62,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let item2 = Item(name: "Cereal", price: 4.50) else {
             fatalError("Unable to instantiate item")
         }
-        items += [item1, item2]
+        itemsList += [item1, item2]
         
     }
     

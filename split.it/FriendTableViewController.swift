@@ -9,6 +9,8 @@
 import UIKit
 
 var friends = [Friend]()
+var itemsList = [Item]()
+
 
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -56,15 +58,14 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         
-        print(friends)
-        
         // Fetches the appropriate meal for the data source layout.
         let friend = friends[indexPath.row]
         
         cell.nameLabel.text = friend.name
-        
+        cell.editButton.tag = indexPath.row
         return cell
     }
+
  
 
     /*
@@ -102,15 +103,23 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let button = sender as? UIButton{
+            if (button.tag != -1){
+                let index = button.tag
+                let friend = friends[index]
+                let receiverVC = segue.destination as! AddFriendViewController
+                receiverVC.nameString = friend.name
+                receiverVC.venmoUsernameString = friend.venmoUsername
+                receiverVC.editIndex = index
+            }
+        }
     }
-    */
+ 
     
     //MARK: Private Methods
     

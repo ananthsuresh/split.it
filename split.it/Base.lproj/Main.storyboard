@@ -81,6 +81,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="editButton" destination="xTC-Kb-aeQ" id="VwL-Bd-3XZ"/>
                                             <outlet property="nameLabel" destination="4K9-ov-Ndl" id="pdb-bk-CkF"/>
                                         </connections>
                                     </tableViewCell>
@@ -90,6 +91,11 @@
                                 <rect key="frame" x="284" y="39" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Friend"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                        <integer key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Z86-Rl-fcg" kind="show" id="cig-sC-PNM"/>
                                 </connections>
@@ -361,7 +367,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
         <segue reference="GSt-aj-jwj"/>
-        <segue reference="8Qb-YP-O12"/>
+        <segue reference="gW4-iE-ZNV"/>
         <segue reference="B2X-gK-tLv"/>
     </inferredMetricsTieBreakers>
 </document>

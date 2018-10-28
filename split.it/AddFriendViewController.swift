@@ -9,7 +9,10 @@
 import UIKit
 
 class AddFriendViewController: UIViewController {
-
+    
+    var editIndex : Int? = -1
+    var nameString : String? = ""
+    var venmoUsernameString : String? = ""
     @IBOutlet weak var name: UITextField!
     
     @IBOutlet weak var venmoUsername: UITextField!
@@ -20,7 +23,8 @@ class AddFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        name.text = nameString
+        venmoUsername.text = venmoUsernameString
         // Do any additional setup after loading the view.
     }
 
@@ -39,7 +43,12 @@ class AddFriendViewController: UIViewController {
         guard let friend = Friend(name: name.text!, venmoUsername: venmoUsername.text!) else {
             fatalError("Unable to instantiate friend")
         }
-        friends += [friend]
+        if(editIndex == -1){
+            friends += [friend]
+        }
+        else{
+            friends[editIndex!] = friend
+        }
     }
  
 
