@@ -8,19 +8,20 @@
 
 import UIKit
 
+
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
-    
-    @IBOutlet weak var friendTableView: UITableView!
     var friends = [Friend]()
+    @IBOutlet weak var friendTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         friendTableView.delegate = self
         friendTableView.dataSource = self
+        print("aaaay")
         // Load the sample data.
-        loadSampleFriends()
+//        loadSampleFriends()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,7 +44,7 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
@@ -53,9 +54,8 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
             fatalError("The dequeued cell is not an instance of FriendTableViewCell.")
         }
         
-        print("sexyboi")
         
-        print(friends[0])
+        print(friends)
         
         // Fetches the appropriate meal for the data source layout.
         let friend = friends[indexPath.row]

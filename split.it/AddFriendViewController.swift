@@ -39,6 +39,7 @@ class AddFriendViewController: UIViewController {
         guard let friend = Friend(name: name.text!, venmoUsername: venmoUsername.text!) else {
             fatalError("Unable to instantiate friend")
         }
+        print(receiverVC.friends)
         receiverVC.friends += [friend]
     }
  

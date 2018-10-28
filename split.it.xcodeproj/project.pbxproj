@@ -17,6 +17,9 @@
 		18C8D8302184F8C00055099C /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D82F2184F8C00055099C /* Friend.swift */; };
 		18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D8312184FAB10055099C /* FriendTableViewController.swift */; };
 		18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83321862A370055099C /* AddFriendViewController.swift */; };
+		18C8D83621863A3F0055099C /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83521863A3F0055099C /* ItemViewController.swift */; };
+		18C8D83821863A510055099C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83721863A510055099C /* Item.swift */; };
+		18C8D83A21863A6A0055099C /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83921863A6A0055099C /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		18C8D82F2184F8C00055099C /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		18C8D8312184FAB10055099C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		18C8D83321862A370055099C /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		18C8D83521863A3F0055099C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		18C8D83721863A510055099C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		18C8D83921863A6A0055099C /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,9 @@
 				18C8D82D2184F17B0055099C /* FriendTableViewCell.swift */,
 				18C8D82F2184F8C00055099C /* Friend.swift */,
 				18C8D83321862A370055099C /* AddFriendViewController.swift */,
+				18C8D83521863A3F0055099C /* ItemViewController.swift */,
+				18C8D83721863A510055099C /* Item.swift */,
+				18C8D83921863A6A0055099C /* ItemTableViewCell.swift */,
 			);
 			path = split.it;
 			sourceTree = "<group>";
@@ -211,9 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C8D83621863A3F0055099C /* ItemViewController.swift in Sources */,
+				18C8D83A21863A6A0055099C /* ItemTableViewCell.swift in Sources */,
 				18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */,
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
 				18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */,
+				18C8D83821863A510055099C /* Item.swift in Sources */,
 				18C8D8102182AD0D0055099C /* ViewController.swift in Sources */,
 				18C8D80E2182AD0D0055099C /* AppDelegate.swift in Sources */,
 				18C8D8302184F8C00055099C /* Friend.swift in Sources */,
