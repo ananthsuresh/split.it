@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TesseractOCR
 
 var friends = [Friend]()
 var itemsList = [Item]()
@@ -146,6 +147,15 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func imagePickercontroller(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        if let tesseract = G8Tesseract(language: "eng+fra"){
+            tesseract.engineMode = .tesseractCubeCombined
+            tesseract.pageSegmentationMode = .auto
+            tesseract.image = image.g8_blackAndWhite()
+            tesseract.recognize()
+            var text = tesseract.recognizedText
+            print(text)
+        }
+
         picker.dismiss(animated: true, completion: nil)
     }
 
