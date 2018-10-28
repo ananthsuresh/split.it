@@ -8,15 +8,15 @@
 
 import UIKit
 
+var items = [Item]()
 class ItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var items = [Item]()
     @IBOutlet weak var itemTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         itemTableView.delegate = self
         itemTableView.dataSource = self
-        loadSampleItems()
+        //loadSampleItems()
         // Do any additional setup after loading the view.
     }
 

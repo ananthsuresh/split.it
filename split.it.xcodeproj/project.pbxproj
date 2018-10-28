@@ -20,6 +20,7 @@
 		18C8D83621863A3F0055099C /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83521863A3F0055099C /* ItemViewController.swift */; };
 		18C8D83821863A510055099C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83721863A510055099C /* Item.swift */; };
 		18C8D83A21863A6A0055099C /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83921863A6A0055099C /* ItemTableViewCell.swift */; };
+		18C8D83C218641A30055099C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83B218641A30055099C /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		18C8D83521863A3F0055099C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		18C8D83721863A510055099C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		18C8D83921863A6A0055099C /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		18C8D83B218641A30055099C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				18C8D83521863A3F0055099C /* ItemViewController.swift */,
 				18C8D83721863A510055099C /* Item.swift */,
 				18C8D83921863A6A0055099C /* ItemTableViewCell.swift */,
+				18C8D83B218641A30055099C /* AddItemViewController.swift */,
 			);
 			path = split.it;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */,
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
 				18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */,
+				18C8D83C218641A30055099C /* AddItemViewController.swift in Sources */,
 				18C8D83821863A510055099C /* Item.swift in Sources */,
 				18C8D8102182AD0D0055099C /* ViewController.swift in Sources */,
 				18C8D80E2182AD0D0055099C /* AppDelegate.swift in Sources */,

@@ -8,11 +8,12 @@
 
 import UIKit
 
+var friends = [Friend]()
 
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
-    var friends = [Friend]()
+
     @IBOutlet weak var friendTableView: UITableView!
 
     override func viewDidLoad() {

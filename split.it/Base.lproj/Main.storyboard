@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="346" y="868"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="VUd-Xf-lh6">
             <objects>
-                <viewController id="9vX-0W-9sf" sceneMemberID="viewController">
+                <viewController id="9vX-0W-9sf" customClass="AddItemViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQM-KK-YtU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +189,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Item"/>
                                 <connections>
+                                    <action selector="addItemClick:" destination="9vX-0W-9sf" eventType="touchUpInside" id="tmK-te-6o4"/>
                                     <segue destination="S5N-Ho-xFt" kind="show" id="GSt-aj-jwj"/>
                                 </connections>
                             </button>
@@ -196,6 +197,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ny9-4P-vRz"/>
                     </view>
+                    <connections>
+                        <outlet property="itemNameField" destination="81j-8U-clI" id="9Tc-JT-d8Z"/>
+                        <outlet property="priceField" destination="pe9-7N-swc" id="9oF-Cp-A3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zah-p9-MIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,7 +360,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
-        <segue reference="rXx-hg-cOb"/>
+        <segue reference="GSt-aj-jwj"/>
         <segue reference="8Qb-YP-O12"/>
         <segue reference="B2X-gK-tLv"/>
     </inferredMetricsTieBreakers>
