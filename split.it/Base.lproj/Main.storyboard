@@ -319,6 +319,9 @@
                                 <rect key="frame" x="169" y="580" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="ucR-Vf-sZ7" eventType="touchUpInside" id="4hB-He-qGR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,6 +329,7 @@
                     </view>
                     <connections>
                         <outlet property="assignedItemsTableView" destination="dXo-aH-liw" id="Fe8-b0-2MU"/>
+                        <outlet property="itemNameLabel" destination="tlj-kb-jvD" id="ebf-Kg-One"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qj-pJ-gJG" userLabel="First Responder" sceneMemberID="firstResponder"/>

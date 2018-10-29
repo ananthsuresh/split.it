@@ -11,8 +11,10 @@ import UIKit
 class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var assignedItemsTableView: UITableView!
+    @IBOutlet weak var itemNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemNameLabel.text = itemsList[0].name + " " + String(itemsList[0].price)
         assignedItemsTableView.delegate = self
         assignedItemsTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -54,4 +56,14 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     */
 
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        print(itemsList.count)
+        itemsList.removeFirst(1)
+        print(itemsList.count)
+        if(itemsList.count > 0){
+            self.viewDidLoad()
+        } else {
+            print("done")
+        }
+    }
 }
