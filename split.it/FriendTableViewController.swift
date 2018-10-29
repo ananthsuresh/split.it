@@ -14,7 +14,8 @@ var itemsList = [Item]()
 
 
 class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    var imagePickerController: UIImagePickerController!
+
     //MARK: Properties
 
     @IBOutlet weak var friendTableView: UITableView!
@@ -110,7 +111,7 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let button = sender as? UIButton{
-            if (button.tag != -1){
+            if (button.tag >= 0){
                 let index = button.tag
                 let friend = friends[index]
                 let receiverVC = segue.destination as! AddFriendViewController
@@ -139,24 +140,25 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func takePicture(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
+        imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .camera
+        imagePickerController.allowsEditing = true
         imagePickerController.delegate = self
-        self.present(imagePickerController, animated:true, completion: nil)
+        present(imagePickerController, animated:true, completion: nil)
     }
     
-    func imagePickercontroller(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        imagePickerController.dismiss(animated: true, completion: nil)
+        print("getting here")
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         if let tesseract = G8Tesseract(language: "eng+fra"){
             tesseract.engineMode = .tesseractCubeCombined
             tesseract.pageSegmentationMode = .auto
-            tesseract.image = image.g8_blackAndWhite()
+            tesseract.image = image!.g8_blackAndWhite()
             tesseract.recognize()
             var text = tesseract.recognizedText
             print(text)
         }
-
-        picker.dismiss(animated: true, completion: nil)
     }
 
 }

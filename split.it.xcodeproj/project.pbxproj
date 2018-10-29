@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0AC3A1EB2186479B00A2AE93 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A1EA2186479B00A2AE93 /* tessdata */; };
+		18C4E53F2186928400466A5F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C4E53E2186928400466A5F /* libc++.tbd */; };
+		18C4E54121869E9F00466A5F /* AssignItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */; };
+		18C4E54321869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */; };
 		18C8D80E2182AD0D0055099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D80D2182AD0D0055099C /* AppDelegate.swift */; };
 		18C8D8102182AD0D0055099C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D80F2182AD0D0055099C /* ViewController.swift */; };
 		18C8D8132182AD0D0055099C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C8D8112182AD0D0055099C /* Main.storyboard */; };
@@ -20,7 +23,6 @@
 		18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83321862A370055099C /* AddFriendViewController.swift */; };
 		18C8D83821863A510055099C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83721863A510055099C /* Item.swift */; };
 		18C8D83C218641A30055099C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8D83B218641A30055099C /* AddItemViewController.swift */; };
-		18C8D83E21866ADD0055099C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D83D21866ADD0055099C /* libstdc++.tbd */; };
 		18C8D84021866AE40055099C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D83F21866AE40055099C /* CoreImage.framework */; };
 		18C8D84221866AEB0055099C /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8D84121866AEB0055099C /* TesseractOCR.framework */; };
 		4C90730EE7BA2CA3D3D189D4 /* Pods_split_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F9A01D4168C8859832B85 /* Pods_split_it.framework */; };
@@ -38,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		0AC3A1EA2186479B00A2AE93 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		18C4E53E2186928400466A5F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsViewController.swift; sourceTree = "<group>"; };
+		18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsViewControllerCellTableViewCell.swift; sourceTree = "<group>"; };
 		18C8D80A2182AD0D0055099C /* split.it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = split.it.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C8D80D2182AD0D0055099C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C8D80F2182AD0D0055099C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,9 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C4E53F2186928400466A5F /* libc++.tbd in Frameworks */,
 				18C8D84221866AEB0055099C /* TesseractOCR.framework in Frameworks */,
 				18C8D84021866AE40055099C /* CoreImage.framework in Frameworks */,
-				18C8D83E21866ADD0055099C /* libstdc++.tbd in Frameworks */,
 				4C90730EE7BA2CA3D3D189D4 /* Pods_split_it.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +118,8 @@
 				18C8D80D2182AD0D0055099C /* AppDelegate.swift */,
 				18C8D80F2182AD0D0055099C /* ViewController.swift */,
 				18C8D8112182AD0D0055099C /* Main.storyboard */,
+				18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */,
+				18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */,
 				18C8D8142182AD0E0055099C /* Assets.xcassets */,
 				18C8D8162182AD0E0055099C /* LaunchScreen.storyboard */,
 				18C8D8312184FAB10055099C /* FriendTableViewController.swift */,
@@ -140,6 +147,7 @@
 		494E3FB1C3432E74448E1ADA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18C4E53E2186928400466A5F /* libc++.tbd */,
 				18C8D84121866AEB0055099C /* TesseractOCR.framework */,
 				18C8D83F21866AE40055099C /* CoreImage.framework */,
 				18C8D83D21866ADD0055099C /* libstdc++.tbd */,
@@ -304,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C4E54321869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift in Sources */,
 				18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */,
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
 				18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */,
@@ -312,6 +321,7 @@
 				18C8D8102182AD0D0055099C /* ViewController.swift in Sources */,
 				18C8D80E2182AD0D0055099C /* AppDelegate.swift in Sources */,
 				18C8D8302184F8C00055099C /* Friend.swift in Sources */,
+				18C4E54121869E9F00466A5F /* AssignItemsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +487,7 @@
 				INFOPLIST_FILE = split.it/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.split-it";
+				PRODUCT_MODULE_NAME = split_it;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,6 +505,7 @@
 				INFOPLIST_FILE = split.it/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.split-it";
+				PRODUCT_MODULE_NAME = split_it;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

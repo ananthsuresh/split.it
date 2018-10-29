@@ -16,8 +16,7 @@ class AddFriendViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
     
     @IBOutlet weak var venmoUsername: UITextField!
-    
-    
+        
     @IBAction func doneClick(_ sender: UIButton) {
     }
     
@@ -25,6 +24,8 @@ class AddFriendViewController: UIViewController {
         super.viewDidLoad()
         name.text = nameString
         venmoUsername.text = venmoUsernameString
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+
         // Do any additional setup after loading the view.
     }
 
