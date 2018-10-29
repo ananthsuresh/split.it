@@ -10,6 +10,9 @@ import UIKit
 
 class AssignItemsViewControllerCellTableViewCell: UITableViewCell, UIImagePickerControllerDelegate {
 
+    
+    @IBOutlet weak var assignedFriendLabel: UILabel!
+    @IBOutlet weak var isAssignedSwitch: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

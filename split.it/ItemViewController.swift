@@ -10,7 +10,7 @@ import UIKit
 
 class ItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var itemTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         itemTableView.delegate = self

@@ -199,7 +199,7 @@
         <!--Item View Controller-->
         <scene sceneID="zKM-F1-EQ9">
             <objects>
-                <viewController id="S5N-Ho-xFt" customClass="ItemViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S5N-Ho-xFt" customClass="ItemViewController" customModule="split_it" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wc0-tU-Hya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,9 +259,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TQI-cj-QlM"/>
                     </view>
-                    <connections>
-                        <outlet property="itemTableView" destination="cch-8w-KVC" id="NKQ-6i-TSn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieS-BL-t97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +277,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FGn-cd-EN4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssignItemsViewControllerCellTableViewCell" id="FGn-cd-EN4" customClass="AssignItemsViewControllerCellTableViewCell" customModule="split_it" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="307" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FGn-cd-EN4" id="vpV-pp-ol3" customClass="AssignItemsViewControllerCellTableViewCell" customModule="split_it" customModuleProvider="target">
@@ -300,6 +297,11 @@
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="AssignItemsViewControllerCellTableViewCell"/>
+                                        <connections>
+                                            <outlet property="assignedFriendLabel" destination="cKa-yd-NMa" id="ldt-o0-7vu"/>
+                                            <outlet property="isAssignedSwitch" destination="mD7-F2-dvj" id="awy-je-a3D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -319,6 +321,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hCA-cA-SJS"/>
                     </view>
+                    <connections>
+                        <outlet property="assignedItemsTableView" destination="dXo-aH-liw" id="Fe8-b0-2MU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qj-pJ-gJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,7 +390,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
-        <segue reference="gW4-iE-ZNV"/>
+        <segue reference="8Qb-YP-O12"/>
         <segue reference="B2X-gK-tLv"/>
     </inferredMetricsTieBreakers>
 </document>

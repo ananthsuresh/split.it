@@ -10,13 +10,40 @@ import UIKit
 
 class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var assignedItemsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        assignedItemsTableView.delegate = self
+        assignedItemsTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friends.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "AssignItemsViewControllerCellTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AssignItemsViewControllerCellTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of FriendTableViewCell.")
+        }
+        
+        print(friends[indexPath.row])
+        
+        // Fetches the appropriate meal for the data source layout.
+        let friend = friends[indexPath.row]
+        
+        cell.assignedFriendLabel.text = friend.name
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 
