@@ -199,7 +199,7 @@
         <!--Item View Controller-->
         <scene sceneID="zKM-F1-EQ9">
             <objects>
-                <viewController id="S5N-Ho-xFt" customClass="ItemViewController" customModule="split_it" sceneMemberID="viewController">
+                <viewController id="S5N-Ho-xFt" customClass="ItemViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wc0-tU-Hya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,8 +233,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="wY5-aG-Ham" id="8hH-WZ-SIs"/>
-                                            <outlet property="priceLabel" destination="qj5-Ew-y16" id="f5O-0y-BZy"/>
+                                            <outlet property="nameLabel" destination="wY5-aG-Ham" id="BO1-Tl-hSa"/>
+                                            <outlet property="priceLabel" destination="qj5-Ew-y16" id="nm0-dh-p7p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -259,6 +259,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TQI-cj-QlM"/>
                     </view>
+                    <connections>
+                        <outlet property="itemTableView" destination="cch-8w-KVC" id="EwN-hP-mqk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieS-BL-t97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

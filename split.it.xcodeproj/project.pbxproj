@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0AC3A1EB2186479B00A2AE93 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A1EA2186479B00A2AE93 /* tessdata */; };
+		188467762186B6AD00C38DFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467752186B6AD00C38DFB /* ItemViewController.swift */; };
+		188467782186B79700C38DFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467772186B79700C38DFB /* ItemTableViewCell.swift */; };
 		18C4E53F2186928400466A5F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C4E53E2186928400466A5F /* libc++.tbd */; };
 		18C4E54121869E9F00466A5F /* AssignItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */; };
 		18C4E54321869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		0AC3A1EA2186479B00A2AE93 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		188467752186B6AD00C38DFB /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		188467772186B79700C38DFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		18C4E53E2186928400466A5F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsViewController.swift; sourceTree = "<group>"; };
 		18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignItemsViewControllerCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,9 +61,7 @@
 		18C8D82F2184F8C00055099C /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		18C8D8312184FAB10055099C /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		18C8D83321862A370055099C /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		18C8D83521863A3F0055099C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		18C8D83721863A510055099C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		18C8D83921863A6A0055099C /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		18C8D83B218641A30055099C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		18C8D83D21866ADD0055099C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		18C8D83F21866AE40055099C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -126,11 +128,11 @@
 				18C8D8192182AD0E0055099C /* Info.plist */,
 				18C8D82D2184F17B0055099C /* FriendTableViewCell.swift */,
 				18C8D82F2184F8C00055099C /* Friend.swift */,
-				18C8D83521863A3F0055099C /* ItemViewController.swift */,
 				18C8D83321862A370055099C /* AddFriendViewController.swift */,
 				18C8D83721863A510055099C /* Item.swift */,
-				18C8D83921863A6A0055099C /* ItemTableViewCell.swift */,
 				18C8D83B218641A30055099C /* AddItemViewController.swift */,
+				188467752186B6AD00C38DFB /* ItemViewController.swift */,
+				188467772186B79700C38DFB /* ItemTableViewCell.swift */,
 			);
 			path = split.it;
 			sourceTree = "<group>";
@@ -312,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188467762186B6AD00C38DFB /* ItemViewController.swift in Sources */,
 				18C4E54321869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift in Sources */,
 				18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */,
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
+				188467782186B79700C38DFB /* ItemTableViewCell.swift in Sources */,
 				18C8D8322184FAB10055099C /* FriendTableViewController.swift in Sources */,
 				18C8D83C218641A30055099C /* AddItemViewController.swift in Sources */,
 				18C8D83821863A510055099C /* Item.swift in Sources */,
