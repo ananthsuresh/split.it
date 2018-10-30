@@ -13,6 +13,7 @@ class FriendTableViewCell: UITableViewCell, UIImagePickerControllerDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBAction func editFriend(_ sender: UIButton) {
     }
+
     @IBOutlet weak var editButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()

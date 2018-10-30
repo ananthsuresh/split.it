@@ -7,7 +7,7 @@ target 'split.it' do
 
   # Pods for split.it
   pod 'TesseractOCRiOS', '4.0.0'
-
+  # pod 'TesseractOCRiOS', :git => 'git://github.com/parallaxe/Tesseract-OCR-iOS.git', :branch => 'macos-support'
 	post_install do |installer|
 		installer.pods_project.targets.each do |target|
 		    if target.name == 'TesseractOCRiOS' 

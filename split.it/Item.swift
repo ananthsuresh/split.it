@@ -8,12 +8,13 @@
 
 import UIKit
 
-class Item {
+class Item: Equatable {
     
     //MARK: Properties
     
     var name: String
     var price: Double
+    var friends: [Friend] = []
     
     init?(name: String, price: Double) {
         // Initialization should fail if there is no name or if the rating is negative.
@@ -23,6 +24,10 @@ class Item {
         self.name = name
         self.price = price
         
+    }
+    
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.name == rhs.name && lhs.price == rhs.price
     }
     
 }

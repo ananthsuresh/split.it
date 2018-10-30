@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AC3A1EB2186479B00A2AE93 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A1EA2186479B00A2AE93 /* tessdata */; };
+		1866AEB32187D96700F62EC9 /* FriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866AEB22187D96700F62EC9 /* FriendTests.swift */; };
 		188467762186B6AD00C38DFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467752186B6AD00C38DFB /* ItemViewController.swift */; };
 		188467782186B79700C38DFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467772186B79700C38DFB /* ItemTableViewCell.swift */; };
 		18C4E53F2186928400466A5F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C4E53E2186928400466A5F /* libc++.tbd */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		0AC3A1EA2186479B00A2AE93 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		1866AEB22187D96700F62EC9 /* FriendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTests.swift; sourceTree = "<group>"; };
 		188467752186B6AD00C38DFB /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		188467772186B79700C38DFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		18C4E53E2186928400466A5F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -140,6 +142,7 @@
 		18C8D8212182AD0F0055099C /* split.itTests */ = {
 			isa = PBXGroup;
 			children = (
+				1866AEB22187D96700F62EC9 /* FriendTests.swift */,
 				18C8D8222182AD0F0055099C /* split_itTests.swift */,
 				18C8D8242182AD0F0055099C /* Info.plist */,
 			);
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C8D8232182AD0F0055099C /* split_itTests.swift in Sources */,
+				1866AEB32187D96700F62EC9 /* FriendTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +526,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A22XKGBQX;
 				INFOPLIST_FILE = split.itTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.split-itTests";
@@ -538,6 +543,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A22XKGBQX;
 				INFOPLIST_FILE = split.itTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.split-itTests";
