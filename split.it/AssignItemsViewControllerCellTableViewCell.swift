@@ -12,7 +12,13 @@ class AssignItemsViewControllerCellTableViewCell: UITableViewCell, UIImagePicker
 
     
     @IBOutlet weak var assignedFriendLabel: UILabel!
+    @IBOutlet weak var assignedFriendOwed: UILabel!
     @IBOutlet weak var isAssignedSwitch: UISwitch!
+    weak var cellDelegate: AssignItemsTableViewCellDelegate?
+    
+    @IBAction func switchTriggered(_ sender: UISwitch) {
+        cellDelegate?.didTriggerSwitch(sender.tag, isOn: sender.isOn)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
