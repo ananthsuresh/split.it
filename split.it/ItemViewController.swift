@@ -48,7 +48,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let item = itemsList[indexPath.row]
         
         cell.nameLabel.text = item.name
-        cell.priceLabel.text = String(format:"%.02f", item.price)
+        cell.priceLabel.text = "$" + String(format:"%.02f", item.price)
         
         return cell
     }
