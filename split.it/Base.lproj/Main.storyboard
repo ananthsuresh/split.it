@@ -341,11 +341,48 @@
                     <connections>
                         <outlet property="assignedItemsTableView" destination="dXo-aH-liw" id="Fe8-b0-2MU"/>
                         <outlet property="itemNameLabel" destination="tlj-kb-jvD" id="ebf-Kg-One"/>
+                        <segue destination="jqs-Oc-XeF" kind="show" identifier="segueToRequestPage" id="lI9-0A-Yd1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qj-pJ-gJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="2447.226386806597"/>
+        </scene>
+        <!--Send Request View Controller-->
+        <scene sceneID="diB-2O-cna">
+            <objects>
+                <viewController id="jqs-Oc-XeF" customClass="SendRequestViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RkK-6b-ZbS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FriedName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdB-GC-OPO">
+                                <rect key="frame" x="16" y="28" width="343" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phK-wn-y4S">
+                                <rect key="frame" x="149" y="357" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send Request"/>
+                                <connections>
+                                    <action selector="sendRequest:" destination="jqs-Oc-XeF" eventType="touchUpInside" id="3Fx-0Z-VmB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="a5E-53-F8U"/>
+                    </view>
+                    <connections>
+                        <outlet property="friendLabel" destination="BdB-GC-OPO" id="UD6-b0-oyc"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" id="Svp-dx-fF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaL-Nr-i1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="2446.3268365817094"/>
         </scene>
         <!--Add Friend View Controller-->
         <scene sceneID="MZh-8n-iv9">

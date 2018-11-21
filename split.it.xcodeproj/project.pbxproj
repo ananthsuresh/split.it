@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AC3A1EB2186479B00A2AE93 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0AC3A1EA2186479B00A2AE93 /* tessdata */; };
+		18480C9221A50E9200C1DA45 /* SendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18480C9121A50E9200C1DA45 /* SendRequestViewController.swift */; };
 		1866AEB32187D96700F62EC9 /* FriendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866AEB22187D96700F62EC9 /* FriendTests.swift */; };
 		188467762186B6AD00C38DFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467752186B6AD00C38DFB /* ItemViewController.swift */; };
 		188467782186B79700C38DFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188467772186B79700C38DFB /* ItemTableViewCell.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0AC3A1EA2186479B00A2AE93 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		18480C9121A50E9200C1DA45 /* SendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendRequestViewController.swift; sourceTree = "<group>"; };
 		1866AEB22187D96700F62EC9 /* FriendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTests.swift; sourceTree = "<group>"; };
 		188467752186B6AD00C38DFB /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		188467772186B79700C38DFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				18C8D80D2182AD0D0055099C /* AppDelegate.swift */,
 				18C8D80F2182AD0D0055099C /* ViewController.swift */,
 				18C8D8112182AD0D0055099C /* Main.storyboard */,
+				18480C9121A50E9200C1DA45 /* SendRequestViewController.swift */,
 				18C4E54221869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift */,
 				18C4E54021869E9F00466A5F /* AssignItemsViewController.swift */,
 				18F161BA21A3BB2500D1797B /* AssignItemsTableViewCellDelegate.swift */,
@@ -322,6 +325,7 @@
 			files = (
 				188467762186B6AD00C38DFB /* ItemViewController.swift in Sources */,
 				18C4E54321869F9300466A5F /* AssignItemsViewControllerCellTableViewCell.swift in Sources */,
+				18480C9221A50E9200C1DA45 /* SendRequestViewController.swift in Sources */,
 				18C8D83421862A370055099C /* AddFriendViewController.swift in Sources */,
 				18C8D82E2184F17B0055099C /* FriendTableViewCell.swift in Sources */,
 				188467782186B79700C38DFB /* ItemTableViewCell.swift in Sources */,

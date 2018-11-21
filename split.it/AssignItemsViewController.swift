@@ -92,7 +92,7 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
             }
             self.viewDidLoad()
         } else {
-            print("done")
+            performSegue(withIdentifier: "segueToRequestPage", sender: nil)
         }
     }
 }
