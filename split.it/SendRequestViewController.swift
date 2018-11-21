@@ -16,7 +16,7 @@ class SendRequestViewController: UIViewController {
         friendLabel.text = friends[0].name;
     }
     @IBAction func sendRequest(_ sender: Any) {
-        let amountOwed:String = String(format:"%f", friends[0].amountOwed);
+        let amountOwed:String = String(format:"%.02f", friends[0].amountOwed);
         let venmoUsername:String = friends[0].venmoUsername;
         guard let url = URL(string: "venmo://paycharge?txn=pay&recipients=\(venmoUsername)&amount=\(amountOwed)&note=Note") else { return }
         UIApplication.shared.open(url)

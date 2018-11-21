@@ -14,7 +14,7 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var itemNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemNameLabel.text = itemsList[0].name + " " + String(itemsList[0].price)
+        itemNameLabel.text = itemsList[0].name + " " + String(format:"%.02f", itemsList[0].price)
         assignedItemsTableView.delegate = self
         assignedItemsTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -34,7 +34,7 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
             guard let cell = self.assignedItemsTableView.cellForRow(at: indexPath) as? AssignItemsViewControllerCellTableViewCell else {
                 fatalError("The dequeued cell is not an instance of FriendTableViewCell.")
             }
-            cell.assignedFriendOwed.text = String(format:"%f", friends[i].amountOwed)
+            cell.assignedFriendOwed.text = String(format:"%.02f", friends[i].amountOwed)
         }
 
         
@@ -64,7 +64,7 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
         cell.cellDelegate = self
         cell.isAssignedSwitch.tag = indexPath.row
         cell.assignedFriendLabel.text = friend.name
-        cell.assignedFriendOwed.text = String(format:"%f", friend.amountOwed)
+        cell.assignedFriendOwed.text = String(format:"%.02f", friend.amountOwed)
         return cell
     }
     

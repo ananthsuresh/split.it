@@ -18,7 +18,7 @@ class Item: Equatable {
     
     init?(name: String, price: Double) {
         // Initialization should fail if there is no name or if the rating is negative.
-        if name.isEmpty || price.isNaN {
+        if name.isEmpty || price.isNaN || price <= 0 {
             return nil
         }
         self.name = name

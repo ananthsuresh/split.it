@@ -33,8 +33,19 @@ class AddItemViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let item = Item(name: itemNameField.text!, price: Double(priceField.text!)!) else {
-            fatalError("Unable to instantiate item")
+        guard let price = Double(priceField.text!) else {
+            let alert = UIAlertController(title: "Invalid price", message: "Please input a valid price", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return;
+        }
+        guard let item = Item(name: itemNameField.text!, price: price) else {
+            let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return;
         }
         itemsList += [item]
 

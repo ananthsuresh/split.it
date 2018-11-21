@@ -48,24 +48,12 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let item = itemsList[indexPath.row]
         
         cell.nameLabel.text = item.name
-        cell.priceLabel.text = String(item.price)
+        cell.priceLabel.text = String(format:"%.02f", item.price)
         
         return cell
     }
     
     //MARK: Private Methods
-    
-    private func loadSampleItems() {
-        guard let item1 = Item(name: "Natty Daddy", price: 9.50) else {
-            fatalError("Unable to instantiate item")
-        }
-        
-        guard let item2 = Item(name: "Cereal", price: 4.50) else {
-            fatalError("Unable to instantiate item")
-        }
-        itemsList += [item1, item2]
-        
-    }
     
     
     
