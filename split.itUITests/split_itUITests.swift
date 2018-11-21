@@ -197,4 +197,151 @@ class split_itUITests: XCTestCase {
         XCTAssertTrue(tablesQuery.staticTexts["bananas"].exists)
         XCTAssertFalse(tablesQuery.staticTexts["pears"].exists)
      }
+    
+    func testAssignItems(){
+        
+        let app = XCUIApplication()
+        let app2 = app
+        app.buttons["Start"].tap()
+        
+        let addFriendButton = app.buttons["Add Friend"]
+        addFriendButton.tap()
+        
+        let window = app.children(matching: .window).element(boundBy: 0)
+        let element = window.children(matching: .other).element(boundBy: 1).children(matching: .other).element
+        element.children(matching: .textField).element(boundBy: 0).tap()
+        
+        let kKey = app2/*@START_MENU_TOKEN@*/.keys["k"]/*[[".keyboards.keys[\"k\"]",".keys[\"k\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        kKey.tap()
+        
+        let iKey = app2/*@START_MENU_TOKEN@*/.keys["i"]/*[[".keyboards.keys[\"i\"]",".keys[\"i\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        iKey.tap()
+        
+        let eKey = app2/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        eKey.tap()
+        
+        let rKey = app2/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        rKey.tap()
+        
+        let aKey = app2/*@START_MENU_TOKEN@*/.keys["a"]/*[[".keyboards.keys[\"a\"]",".keys[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        aKey.tap()
+        
+        let nKey = app2/*@START_MENU_TOKEN@*/.keys["n"]/*[[".keyboards.keys[\"n\"]",".keys[\"n\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        nKey.tap()
+        element.children(matching: .textField).element(boundBy: 1).tap()
+        aKey.tap()
+        
+        let uKey = app2/*@START_MENU_TOKEN@*/.keys["u"]/*[[".keyboards.keys[\"u\"]",".keys[\"u\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        uKey.tap()
+        
+        let lKey = app2/*@START_MENU_TOKEN@*/.keys["l"]/*[[".keyboards.keys[\"l\"]",".keys[\"l\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        lKey.tap()
+        aKey.tap()
+        kKey.tap()
+        element.tap()
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        addFriendButton.tap()
+        
+        let element2 = window.children(matching: .other).element(boundBy: 3).children(matching: .other).element
+        element2.children(matching: .textField).element(boundBy: 0).tap()
+        aKey.tap()
+        nKey.tap()
+        aKey.tap()
+        nKey.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let hKey = app2/*@START_MENU_TOKEN@*/.keys["h"]/*[[".keyboards.keys[\"h\"]",".keys[\"h\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        hKey.tap()
+        element2.tap()
+        element2.children(matching: .textField).element(boundBy: 1).tap()
+        
+        let sKey = app2/*@START_MENU_TOKEN@*/.keys["s"]/*[[".keyboards.keys[\"s\"]",".keys[\"s\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        sKey.tap()
+        uKey.tap()
+        rKey.tap()
+        eKey.tap()
+        sKey.tap()
+        hKey.tap()
+        element2.tap()
+        doneButton.tap()
+        app.buttons["Manual Entry"].tap()
+        
+        let element3 = window.children(matching: .other).element(boundBy: 5).children(matching: .other).element
+        element3.children(matching: .textField).element(boundBy: 0).tap()
+        app2/*@START_MENU_TOKEN@*/.keys["b"]/*[[".keyboards.keys[\"b\"]",".keys[\"b\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        aKey.tap()
+        nKey.tap()
+        aKey.tap()
+        nKey.tap()
+        aKey.tap()
+        sKey.tap()
+        element3.tap()
+        element3.children(matching: .textField).element(boundBy: 1).tap()
+        
+        let key = app2/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key.tap()
+        
+        let key2 = app2/*@START_MENU_TOKEN@*/.keys["."]/*[[".keyboards.keys[\".\"]",".keys[\".\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key2.tap()
+        
+        let key3 = app2/*@START_MENU_TOKEN@*/.keys["5"]/*[[".keyboards.keys[\"5\"]",".keys[\"5\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key3.tap()
+        
+        let key4 = app2/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key4.tap()
+        element3.tap()
+        
+        let addItemButton = app.buttons["Add Item"]
+        addItemButton.tap()
+        addItemButton.tap()
+        
+        let element4 = window.children(matching: .other).element(boundBy: 7).children(matching: .other).element
+        element4.children(matching: .textField).element(boundBy: 0).tap()
+        app2/*@START_MENU_TOKEN@*/.keys["c"]/*[[".keyboards.keys[\"c\"]",".keys[\"c\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        eKey.tap()
+        rKey.tap()
+        eKey.tap()
+        aKey.tap()
+        lKey.tap()
+        element4.children(matching: .textField).element(boundBy: 1).tap()
+        key.tap()
+        key2.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["7"]/*[[".keyboards.keys[\"7\"]",".keys[\"7\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        key3.tap()
+        element4.tap()
+        addItemButton.tap()
+        addItemButton.tap()
+        
+        let element5 = window.children(matching: .other).element(boundBy: 9).children(matching: .other).element
+        element5.children(matching: .textField).element(boundBy: 0).tap()
+        eKey.tap()
+        
+        let gKey = app2/*@START_MENU_TOKEN@*/.keys["g"]/*[[".keyboards.keys[\"g\"]",".keys[\"g\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        gKey.tap()
+        gKey.tap()
+        sKey.tap()
+        element5.children(matching: .textField).element(boundBy: 1).tap()
+        app2/*@START_MENU_TOKEN@*/.keys["1"]/*[[".keyboards.keys[\"1\"]",".keys[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        key4.tap()
+        key2.tap()
+        key4.tap()
+        key4.tap()
+        element5.tap()
+        addItemButton.tap()
+        doneButton.tap()
+        
+        app.tables.cells.containing(.staticText, identifier:"kieran").switches.element(boundBy: 0).tap();
+        doneButton.tap()
+        app.tables.cells.containing(.staticText, identifier:"ananth").switches.element(boundBy: 0).tap();
+        doneButton.tap()
+        app.tables.cells.containing(.staticText, identifier:"kieran").switches.element(boundBy: 0).tap();
+        app.tables.cells.containing(.staticText, identifier:"ananth").switches.element(boundBy: 0).tap();
+        
+        let tablesQuery = app.tables
+        XCTAssertTrue(tablesQuery.staticTexts["7.75"].exists)
+        XCTAssertTrue(tablesQuery.staticTexts["7.50"].exists)
+    }
+    
 }
