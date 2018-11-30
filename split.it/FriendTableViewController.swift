@@ -8,20 +8,25 @@
 
 import UIKit
 import TesseractOCR
+import GPUImage
 
 var friends = [Friend]()
 var itemsList = [Item]()
 
 
-class FriendTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var imagePickerController: UIImagePickerController!
-
+    let tesseract:G8Tesseract = G8Tesseract(language:"eng");
+    
     //MARK: Properties
 
     @IBOutlet weak var friendTableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tesseract.engineMode = .tesseractCubeCombined
+        tesseract.pageSegmentationMode = .auto
+        tesseract.delegate = self
         friendTableView.delegate = self
         friendTableView.dataSource = self
         print("aaaay")
@@ -156,13 +161,35 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         print("getting here")
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         if let tesseract = G8Tesseract(language: "eng+fra"){
-            tesseract.engineMode = .tesseractCubeCombined
-            tesseract.pageSegmentationMode = .auto
+//            // Initialize our adaptive threshold filter
+//            let filter = AdaptiveThreshold()
+//            filter.blurRadiusInPixels = 4.0
+////            filter.threshold = 4.0
+//
+//            // Retrieve the filtered image from the filter
+//           let filteredImage = image?.filterWithOperation(filter)
+//
+//            // Give Tesseract the filtered image
+
+
             tesseract.image = image!.g8_blackAndWhite()
             tesseract.recognize()
             var text = tesseract.recognizedText
             print(text)
         }
+    }
+    
+    func preprocessedImageForTesseract(tesseract: G8Tesseract, sourceImage: UIImage) -> UIImage{
+        let filter = AdaptiveThreshold()
+        filter.blurRadiusInPixels = 4.0
+        //            filter.threshold = 4.0
+        
+        // Retrieve the filtered image from the filter
+        let filteredImage = sourceImage.filterWithOperation(filter)
+        
+        // Give Tesseract the filtered image
+        
+        return filteredImage
     }
 
 }
