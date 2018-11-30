@@ -371,11 +371,19 @@
                                     <action selector="sendRequest:" destination="jqs-Oc-XeF" eventType="touchUpInside" id="3Fx-0Z-VmB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount Owed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-tk-13O">
+                                <rect key="frame" x="102" y="112" width="181" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="a5E-53-F8U"/>
                     </view>
                     <connections>
+                        <outlet property="amountOwedLabel" destination="RHg-tk-13O" id="Eis-l9-VWT"/>
                         <outlet property="friendLabel" destination="BdB-GC-OPO" id="UD6-b0-oyc"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" id="Svp-dx-fF7"/>
                     </connections>
@@ -444,9 +452,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GSt-aj-jwj"/>
         <segue reference="cig-sC-PNM"/>
         <segue reference="8Qb-YP-O12"/>
-        <segue reference="B2X-gK-tLv"/>
+        <segue reference="LAd-uZ-G9T"/>
     </inferredMetricsTieBreakers>
 </document>

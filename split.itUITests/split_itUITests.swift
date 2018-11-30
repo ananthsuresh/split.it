@@ -127,6 +127,46 @@ class split_itUITests: XCTestCase {
 
     }
     
+    func testDeleteFriend(){
+        
+        let app = XCUIApplication()
+        app.buttons["Start"].tap()
+        app.buttons["Add Friend"].tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element
+        element.tap()
+        element.children(matching: .textField).element(boundBy: 0).tap()
+        
+        let kKey = app/*@START_MENU_TOKEN@*/.keys["k"]/*[[".keyboards.keys[\"k\"]",".keys[\"k\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        kKey.tap()
+        
+        let app2 = app
+        app2/*@START_MENU_TOKEN@*/.keys["i"]/*[[".keyboards.keys[\"i\"]",".keys[\"i\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let rKey = app2/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        rKey.tap()
+        
+        let aKey = app2/*@START_MENU_TOKEN@*/.keys["a"]/*[[".keyboards.keys[\"a\"]",".keys[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        aKey.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["n"]/*[[".keyboards.keys[\"n\"]",".keys[\"n\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        element.children(matching: .textField).element(boundBy: 1).tap()
+        aKey.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["u"]/*[[".keyboards.keys[\"u\"]",".keys[\"u\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["l"]/*[[".keyboards.keys[\"l\"]",".keys[\"l\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        aKey.tap()
+        kKey.tap()
+        element.tap()
+        app.buttons["Done"].tap()
+        let tablesQuery = app.tables
+        XCTAssertTrue(tablesQuery.staticTexts["kieran"].exists)
+
+        app2.tables/*@START_MENU_TOKEN@*/.staticTexts["kieran"]/*[[".cells.staticTexts[\"kieran\"]",".staticTexts[\"kieran\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        app.tables.buttons["Delete"].tap()
+        
+        XCTAssertFalse(tablesQuery.staticTexts["kieran"].exists)
+    }
+    
     
      func testAddItem(){
         
@@ -338,10 +378,11 @@ class split_itUITests: XCTestCase {
         doneButton.tap()
         app.tables.cells.containing(.staticText, identifier:"kieran").switches.element(boundBy: 0).tap();
         app.tables.cells.containing(.staticText, identifier:"ananth").switches.element(boundBy: 0).tap();
+        doneButton.tap();
         
-        let tablesQuery = app.tables
-        XCTAssertTrue(tablesQuery.staticTexts["7.75"].exists)
-        XCTAssertTrue(tablesQuery.staticTexts["7.50"].exists)
+        XCTAssertTrue(app.staticTexts["7.50"].exists)
+        XCTAssertTrue(app.staticTexts["kieran"].exists)
     }
+
     
 }

@@ -10,10 +10,12 @@ import UIKit
 
 class SendRequestViewController: UIViewController {
     @IBOutlet weak var friendLabel: UILabel!
+    @IBOutlet weak var amountOwedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         friendLabel.text = friends[0].name;
+        amountOwedLabel.text = String(format:"%.02f", friends[0].amountOwed);
     }
     @IBAction func sendRequest(_ sender: Any) {
         let amountOwed:String = String(format:"%.02f", friends[0].amountOwed);
