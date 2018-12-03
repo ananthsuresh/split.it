@@ -196,31 +196,12 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     func createItemsFromText(text: String){
         let lines = text.components(separatedBy: "\n")
         for line in lines{
-//            var price = 0;
-//            for i in stride(from: lines.count, to: 0, by: -1){
-//                let char = line[line.index(line.startIndex, offsetBy: i)]
-//                if let number = Int(String(char)) {
-//                    // is a number
-//                    price = number;
-//                    var nonCharNumber = 0;
-//                    var currentIndex = i;
-//                    while(nonCharNumber <= 1){
-//                        let nextChar = line[line.index(line.startIndex, offsetBy: currentIndex)]
-//                        if let number = Int(String(char)){
-//                            price = 10*number + price;
-//                        } else {
-//                            nonCharNumber = nonCharNumber + 1;
-//                        }
-//                    }
-//                    // split rest of string
-//                    // make item
-//                } else {
-//                    // is not a number
-//                }
-//            }
             let matched = matches(for: "\\d+[._]\\d{2}", in: line)
             if(matched.count == 0){
                 continue
+            }
+            if (matches(for: "[a-z]|[A-Z]", in: line).count == 0){
+                continue;
             }
             let match = matched[0]
             let price = Double(match)
