@@ -12,12 +12,15 @@ class AddItemViewController: UIViewController {
 
     @IBOutlet weak var itemNameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
-    
+    var itemNameString : String? = ""
+    var priceString : String? = ""
     
     @IBAction func addItemClick(_ sender: UIButton) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemNameField.text = itemNameString
+        priceField.text = priceString
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         // Do any additional setup after loading the view.
     }

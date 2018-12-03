@@ -262,6 +262,7 @@
                     </view>
                     <connections>
                         <outlet property="itemTableView" destination="cch-8w-KVC" id="EwN-hP-mqk"/>
+                        <segue destination="9vX-0W-9sf" kind="show" identifier="editItemSegue" id="Hcp-Z5-rgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieS-BL-t97" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -455,7 +456,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
         <segue reference="rqf-uM-fKI"/>
-        <segue reference="8Qb-YP-O12"/>
+        <segue reference="Hcp-Z5-rgf"/>
         <segue reference="LAd-uZ-G9T"/>
     </inferredMetricsTieBreakers>
 </document>

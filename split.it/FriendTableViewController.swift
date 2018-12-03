@@ -29,7 +29,6 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
         tesseract.delegate = self
         friendTableView.delegate = self
         friendTableView.dataSource = self
-        print("aaaay")
         // Load the sample data.
 //        loadSampleFriends()
 
