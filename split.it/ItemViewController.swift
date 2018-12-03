@@ -86,6 +86,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
             let item = itemsList[index]
             receiverVC.itemNameString = item.name
             receiverVC.priceString = String(item.price)
+            receiverVC.existingItemIndex = index
         
         }
      }

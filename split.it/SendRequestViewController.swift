@@ -8,11 +8,17 @@
 
 import UIKit
 
+private var firstLoad = true
+
 class SendRequestViewController: UIViewController {
     @IBOutlet weak var friendLabel: UILabel!
     @IBOutlet weak var amountOwedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if firstLoad {
+            friends.removeFirst(1)
+            firstLoad = false
+        }
         // Do any additional setup after loading the view.
         friendLabel.text = friends[0].name;
         amountOwedLabel.text = String(format:"%.02f", friends[0].amountOwed);

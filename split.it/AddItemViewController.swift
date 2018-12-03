@@ -14,6 +14,7 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
     var itemNameString : String? = ""
     var priceString : String? = ""
+    var existingItemIndex : Int? = -1
     
     @IBAction func addItemClick(_ sender: UIButton) {
     }
@@ -50,7 +51,12 @@ class AddItemViewController: UIViewController {
             self.present(alert, animated: true)
             return;
         }
-        itemsList += [item]
+        if(existingItemIndex != -1){
+            itemsList[existingItemIndex!] = item
+        }
+        else{
+            itemsList += [item]
+        }
 
     }
  

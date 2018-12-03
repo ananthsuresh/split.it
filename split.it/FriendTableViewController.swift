@@ -12,7 +12,7 @@ import GPUImage
 
 var friends = [Friend]()
 var itemsList = [Item]()
-
+private var firstLoad = true
 
 class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var imagePickerController: UIImagePickerController!
@@ -21,9 +21,12 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     //MARK: Properties
 
     @IBOutlet weak var friendTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if firstLoad{
+            friends.append(Friend(name: "Me", venmoUsername: "NA")!)
+            firstLoad = false
+        }
         tesseract.engineMode = .tesseractCubeCombined
         tesseract.pageSegmentationMode = .auto
         tesseract.delegate = self
@@ -195,14 +198,15 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     func createItemsFromText(text: String){
         let lines = text.components(separatedBy: "\n")
         for line in lines{
-            let matched = matches(for: "\\d+[._]\\d{2}", in: line)
+            let matched = matches(for: "\\d+[._]\\d{2}\\s[FT]", in: line)
             if(matched.count == 0){
                 continue
             }
             if (matches(for: "[a-z]|[A-Z]", in: line).count == 0){
                 continue;
             }
-            let match = matched[0]
+            var match = matched[0]
+            match.removeLast(2)
             let price = Double(match)
             let itemName = line.components(separatedBy: match)[0]
             itemsList.append(Item(name: itemName, price: price!)!)
