@@ -157,8 +157,9 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-        imagePickerController.dismiss(animated: true, completion: nil)
-        print("getting here")
+        imagePickerController.dismiss(animated: true, completion: {
+            self.performSegue(withIdentifier: "pictureToItemListSegue", sender: nil)
+        })
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         if let tesseract = G8Tesseract(language: "eng+fra"){
 //            // Initialize our adaptive threshold filter
@@ -174,8 +175,8 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
 
             tesseract.image = image!.g8_blackAndWhite()
             tesseract.recognize()
-            var text = tesseract.recognizedText
-            print(text)
+            let text = tesseract.recognizedText
+            createItemsFromText(text: text!)
         }
     }
     
@@ -190,6 +191,57 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
         // Give Tesseract the filtered image
         
         return filteredImage
+    }
+    
+    func createItemsFromText(text: String){
+        let lines = text.components(separatedBy: "\n")
+        for line in lines{
+//            var price = 0;
+//            for i in stride(from: lines.count, to: 0, by: -1){
+//                let char = line[line.index(line.startIndex, offsetBy: i)]
+//                if let number = Int(String(char)) {
+//                    // is a number
+//                    price = number;
+//                    var nonCharNumber = 0;
+//                    var currentIndex = i;
+//                    while(nonCharNumber <= 1){
+//                        let nextChar = line[line.index(line.startIndex, offsetBy: currentIndex)]
+//                        if let number = Int(String(char)){
+//                            price = 10*number + price;
+//                        } else {
+//                            nonCharNumber = nonCharNumber + 1;
+//                        }
+//                    }
+//                    // split rest of string
+//                    // make item
+//                } else {
+//                    // is not a number
+//                }
+//            }
+            let matched = matches(for: "\\d+[._]\\d{2}", in: line)
+            if(matched.count == 0){
+                continue
+            }
+            let match = matched[0]
+            let price = Double(match)
+            let itemName = line.components(separatedBy: match)[0]
+            itemsList.append(Item(name: itemName, price: price!)!)
+        }
+    }
+    
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            return results.map {
+                String(text[Range($0.range, in: text)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
     }
 
 }

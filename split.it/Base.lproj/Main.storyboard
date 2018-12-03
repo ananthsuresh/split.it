@@ -132,6 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="friendTableView" destination="q4M-uY-UU8" id="T98-jL-gjQ"/>
+                        <segue destination="S5N-Ho-xFt" kind="show" identifier="pictureToItemListSegue" id="rqf-uM-fKI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inf-4V-xpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -453,6 +454,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
+        <segue reference="rqf-uM-fKI"/>
         <segue reference="8Qb-YP-O12"/>
         <segue reference="LAd-uZ-G9T"/>
     </inferredMetricsTieBreakers>
