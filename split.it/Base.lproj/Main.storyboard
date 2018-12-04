@@ -180,7 +180,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Item"/>
                                 <connections>
-                                    <action selector="addItemClick:" destination="9vX-0W-9sf" eventType="touchUpInside" id="tmK-te-6o4"/>
                                     <segue destination="S5N-Ho-xFt" kind="show" id="GSt-aj-jwj"/>
                                 </connections>
                             </button>
@@ -455,7 +454,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cig-sC-PNM"/>
-        <segue reference="rqf-uM-fKI"/>
+        <segue reference="GSt-aj-jwj"/>
         <segue reference="Hcp-Z5-rgf"/>
         <segue reference="LAd-uZ-G9T"/>
     </inferredMetricsTieBreakers>

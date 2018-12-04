@@ -16,8 +16,7 @@ class AddItemViewController: UIViewController {
     var priceString : String? = ""
     var existingItemIndex : Int? = -1
     
-    @IBAction func addItemClick(_ sender: UIButton) {
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNameField.text = itemNameString
@@ -31,7 +30,6 @@ class AddItemViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     
     // MARK: - Navigation
 
