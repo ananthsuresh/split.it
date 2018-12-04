@@ -383,6 +383,109 @@ class split_itUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["7.50"].exists)
         XCTAssertTrue(app.staticTexts["kieran"].exists)
     }
+    
+    func testVenmo(){
+        let app = XCUIApplication()
+        let app2 = app
+        app.buttons["Start"].tap()
+        app.buttons["Add Friend"].tap()
+        
+        let window = app.children(matching: .window).element(boundBy: 0)
+        let element = window.children(matching: .other).element(boundBy: 1).children(matching: .other).element
+        element.children(matching: .textField).element(boundBy: 0).tap()
+        
+        let aKey = app2/*@START_MENU_TOKEN@*/.keys["a"]/*[[".keyboards.keys[\"a\"]",".keys[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        aKey.tap()
+        
+        let nKey = app2/*@START_MENU_TOKEN@*/.keys["n"]/*[[".keyboards.keys[\"n\"]",".keys[\"n\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        nKey.tap()
+        aKey.tap()
+        nKey.tap()
+        
+        let tKey = app2/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        tKey.tap()
+        
+        let hKey = app2/*@START_MENU_TOKEN@*/.keys["h"]/*[[".keyboards.keys[\"h\"]",".keys[\"h\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        hKey.tap()
+        element.children(matching: .textField).element(boundBy: 1).tap()
+        
+        let sKey = app2/*@START_MENU_TOKEN@*/.keys["s"]/*[[".keyboards.keys[\"s\"]",".keys[\"s\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        sKey.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["u"]/*[[".keyboards.keys[\"u\"]",".keys[\"u\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sKey.tap()
+        hKey.tap()
+        element.tap()
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        app.buttons["Manual Entry"].tap()
+        
+        let element2 = window.children(matching: .other).element(boundBy: 3).children(matching: .other).element
+        element2.children(matching: .textField).element(boundBy: 0).tap()
+        hKey.tap()
+        
+        let oKey = app2/*@START_MENU_TOKEN@*/.keys["o"]/*[[".keyboards.keys[\"o\"]",".keys[\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        oKey.tap()
+        tKey.tap()
+        tKey.tap()
+        
+        let dKey = app2/*@START_MENU_TOKEN@*/.keys["d"]/*[[".keyboards.keys[\"d\"]",".keys[\"d\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        dKey.tap()
+        dKey.tap()
+        oKey.tap()
+        
+        let gKey = app2/*@START_MENU_TOKEN@*/.keys["g"]/*[[".keyboards.keys[\"g\"]",".keys[\"g\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        gKey.tap()
+        sKey.tap()
+        sKey.tap()
+        element2.children(matching: .textField).element(boundBy: 1).tap()
+        
+        let key = app2/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["."]/*[[".keyboards.keys[\".\"]",".keys[\".\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let key2 = app2/*@START_MENU_TOKEN@*/.keys["0"]/*[[".keyboards.keys[\"0\"]",".keys[\"0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        key2.tap()
+        key2.tap()
+        element2.tap()
+        
+        let addItemButton = app.buttons["Add Item"]
+        addItemButton.tap()
+        app2.tables/*@START_MENU_TOKEN@*/.staticTexts["$2.00"]/*[[".cells.staticTexts[\"$2.00\"]",".staticTexts[\"$2.00\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let element3 = window.children(matching: .other).element(boundBy: 5).children(matching: .other).element
+        element3.children(matching: .textField).element(boundBy: 0).tap()
+        
+        let deleteKey = app2/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        app2.keys["h"].tap()
+        oKey.tap()
+        tKey.tap()
+        app2/*@START_MENU_TOKEN@*/.keys["space"]/*[[".keyboards.keys[\"space\"]",".keys[\"space\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        dKey.tap()
+        oKey.tap()
+        gKey.tap()
+        sKey.tap()
+        element3.tap()
+        addItemButton.tap()
+        doneButton.tap()
+        doneButton.tap()
+        XCTAssertTrue(app.staticTexts["ananth"].exists)
+        XCTAssertTrue(app.staticTexts["0.00"].exists)
+        app.buttons["Send Request"].tap()
+    }
 
     
 }
