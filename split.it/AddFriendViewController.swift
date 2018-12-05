@@ -41,6 +41,20 @@ class AddFriendViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let receiverVC = segue.destination as! FriendTableViewController
+        if(name.text! == ""){
+            let alert = UIAlertController(title: "No name", message: "Please input a name", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return;
+        }
+        if(venmoUsername.text! == ""){
+            let alert = UIAlertController(title: "No venmo username", message: "Please input a valid username", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return;
+        }
         guard let friend = Friend(name: name.text!, venmoUsername: venmoUsername.text!) else {
             fatalError("Unable to instantiate friend")
         }

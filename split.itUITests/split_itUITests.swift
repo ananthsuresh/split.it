@@ -109,7 +109,8 @@ class split_itUITests: XCTestCase {
         
         let doneButton = app.buttons["Done"]
         doneButton.tap()
-        app2.tables/*@START_MENU_TOKEN@*/.buttons["Edit"]/*[[".cells.buttons[\"Edit\"]",".buttons[\"Edit\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.cells.containing(.staticText, identifier:"kieran").buttons["Edit"].tap()
+
         
         let element2 = window.children(matching: .other).element(boundBy: 3).children(matching: .other).element
         element2.children(matching: .textField).element(boundBy: 0).tap()
@@ -486,6 +487,5 @@ class split_itUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["0.00"].exists)
         app.buttons["Send Request"].tap()
     }
-
     
 }

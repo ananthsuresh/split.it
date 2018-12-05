@@ -15,11 +15,13 @@ var itemsList = [Item]()
 private var firstLoad = true
 
 class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var processingLabel: UILabel!
     var imagePickerController: UIImagePickerController!
     let tesseract:G8Tesseract = G8Tesseract(language:"eng");
     
     //MARK: Properties
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var friendTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +73,7 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
         let friend = friends[indexPath.row]
         
         cell.nameLabel.text = friend.name
-        cell.editButton.tag = indexPath.row
+        cell.editButton.tag = indexPath.row + 1
         return cell
     }
 
@@ -122,13 +124,21 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let button = sender as? UIButton{
-            if (button.tag >= 0){
+            if (button.tag > 0){
                 let index = button.tag
                 let friend = friends[index]
                 let receiverVC = segue.destination as! AddFriendViewController
                 receiverVC.nameString = friend.name
                 receiverVC.venmoUsernameString = friend.venmoUsername
                 receiverVC.editIndex = index
+            } else if (button.tag < 0){
+                if(friends.count < 2){
+                    let alert = UIAlertController(title: "More friends required", message: "Please add at least one other friend", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    return;
+                }
             }
         }
     }
@@ -137,8 +147,6 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
     //MARK: Private Methods
     
     private func loadSampleFriends() {
-        print("heyyy")
-        
         guard let friend1 = Friend(name: "Kieran", venmoUsername: "kieranaulak") else {
             fatalError("Unable to instantiate friend1")
         }
@@ -147,13 +155,19 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
             fatalError("Unable to instantiate friend2")
         }
         friends += [friend1, friend2]
-        
     }
     
     @IBAction func takePicture(_ sender: Any) {
+        if(friends.count < 2){
+            let alert = UIAlertController(title: "More friends required", message: "Please add at least one other friend", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return;
+        }
         imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .camera
-        imagePickerController.allowsEditing = true
+        imagePickerController.allowsEditing = false
         imagePickerController.delegate = self
         present(imagePickerController, animated:true, completion: nil)
     }
@@ -163,23 +177,18 @@ class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableV
             self.performSegue(withIdentifier: "pictureToItemListSegue", sender: nil)
         })
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        if let tesseract = G8Tesseract(language: "eng+fra"){
-//            // Initialize our adaptive threshold filter
-//            let filter = AdaptiveThreshold()
-//            filter.blurRadiusInPixels = 4.0
-////            filter.threshold = 4.0
-//
-//            // Retrieve the filtered image from the filter
-//           let filteredImage = image?.filterWithOperation(filter)
-//
-//            // Give Tesseract the filtered image
+        activityIndicator.startAnimating()
+        processingLabel.isHidden = false
+        dismiss(animated: true, completion: {
+            if let tesseract = G8Tesseract(language: "eng+fra"){
+                tesseract.image = image!.g8_blackAndWhite()
+                tesseract.recognize()
+                let text = tesseract.recognizedText
+                self.createItemsFromText(text: text!)
+                //dismiss(animated: false, completion: nil)
+            }
+        })
 
-
-            tesseract.image = image!.g8_blackAndWhite()
-            tesseract.recognize()
-            let text = tesseract.recognizedText
-            createItemsFromText(text: text!)
-        }
     }
     
     func preprocessedImageForTesseract(tesseract: G8Tesseract, sourceImage: UIImage) -> UIImage{
