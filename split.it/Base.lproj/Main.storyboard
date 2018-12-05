@@ -362,6 +362,40 @@
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="2447.226386806597"/>
         </scene>
+        <!--Final Totals View Controller-->
+        <scene sceneID="VzF-NW-uzK">
+            <objects>
+                <viewController id="JC8-RB-8IC" customClass="FinalTotalsViewController" customModule="split_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Org-MI-2P7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Final Totals:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAJ-ng-Rj6">
+                                <rect key="frame" x="110" y="20" width="154" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrP-Fl-EhF">
+                                <rect key="frame" x="16" y="114" width="343" height="441"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Qym-eL-HFJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="totalsLabel" destination="nrP-Fl-EhF" id="Bal-jW-TCI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T3R-9X-3ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.8" y="2907.7961019490258"/>
+        </scene>
         <!--Send Request View Controller-->
         <scene sceneID="diB-2O-cna">
             <objects>
@@ -404,7 +438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaL-Nr-i1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="2446.3268365817094"/>
+            <point key="canvasLocation" x="2239" y="2406"/>
         </scene>
         <!--Add Friend View Controller-->
         <scene sceneID="MZh-8n-iv9">

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Allows for different behavior the first time this page is loaded
 private var firstLoad = true
 
 // File corresponding to the "Send Request" page
