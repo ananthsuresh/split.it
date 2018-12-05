@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Class used to hold each item's information
 class Item: Equatable {
     
     //MARK: Properties

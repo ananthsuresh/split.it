@@ -8,6 +8,7 @@
 
 import UIKit
 
+// File used for cell's of Item's table
 class ItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!

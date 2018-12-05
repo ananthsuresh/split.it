@@ -14,13 +14,13 @@ var friends = [Friend]()
 var itemsList = [Item]()
 private var firstLoad = true
 
+// File corresponding to the "Friends" page
 class FriendTableViewController: UIViewController, G8TesseractDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var processingLabel: UILabel!
+    
     var imagePickerController: UIImagePickerController!
     let tesseract:G8Tesseract = G8Tesseract(language:"eng");
     
-    //MARK: Properties
-
+    @IBOutlet weak var processingLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var friendTableView: UITableView!
     

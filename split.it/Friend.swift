@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Class used to hold Friend's information
 class Friend: Equatable{
     
     //MARK: Properties
@@ -27,6 +28,7 @@ class Friend: Equatable{
         
     }
     
+    // Adds item to a friend
     func addItem(item: Item){
         self.items.append(item)
         let oldPrice = (item.price / Double(item.friends.count))
@@ -40,6 +42,7 @@ class Friend: Equatable{
         }
     }
     
+    // Finds and removes item from friend
     func removeItem(item: Item){
         let itemIndex = self.items.index(of: item)
         let friendIndex = item.friends.index(of: self)
@@ -57,9 +60,9 @@ class Friend: Equatable{
         }
     }
     
+    // Equality method for Friend object
     static func == (lhs: Friend, rhs: Friend) -> Bool {
         return lhs.name == rhs.name && lhs.venmoUsername == rhs.venmoUsername
     }
-    
     
 }

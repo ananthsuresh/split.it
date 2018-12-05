@@ -9,6 +9,7 @@
 import XCTest
 @testable import split_it
 
+// Tests for Friend objects.
 class FriendTests: XCTestCase {
     
     var Fabio:Friend!

@@ -8,10 +8,13 @@
 
 import UIKit
 
+// File corresponding to the "Assign Items" page
 class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AssignItemsTableViewCellDelegate {
 
     @IBOutlet weak var assignedItemsTableView: UITableView!
     @IBOutlet weak var itemNameLabel: UILabel!
+    
+    // Sets up the labels with the current price and item name
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNameLabel.text = itemsList[0].name + " $" + String(format:"%.02f", itemsList[0].price)
@@ -20,6 +23,7 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
     }
     
+    // Sets correct running totals for each friend when a new switch is toggled
     func didTriggerSwitch(_ tag: Int, isOn: Bool) {
         let friend = friends[tag]
         let item = itemsList[0]
@@ -40,15 +44,17 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    // Function required by swift for tables, specifies the number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Function required by swift for tables, specifies length of table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
     
-    
+    // Sets up table with correct information
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "AssignItemsViewControllerCellTableViewCell"
@@ -56,8 +62,6 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AssignItemsViewControllerCellTableViewCell  else {
             fatalError("The dequeued cell is not an instance of FriendTableViewCell.")
         }
-        
-        print(friends[indexPath.row])
         
         // Fetches the appropriate meal for the data source layout.
         let friend = friends[indexPath.row]
@@ -68,20 +72,9 @@ class AssignItemsViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // Goes to the next item, if no next item goes to the Venmo page.
     @IBAction func doneButtonClicked(_ sender: Any) {
-        print(itemsList.count)
         itemsList.removeFirst(1)
-        print(itemsList.count)
         if(itemsList.count > 0){
             for i in 0..<friends.count {
                 let indexPath = IndexPath(item: i, section: 0)

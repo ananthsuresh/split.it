@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Required by swift for table, corresponds to AssignItemsViewController's table
 protocol AssignItemsTableViewCellDelegate : class {
     func didTriggerSwitch(_ tag: Int, isOn: Bool)
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Specifies cell information for the FriendViewController's table
 class FriendTableViewCell: UITableViewCell, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!

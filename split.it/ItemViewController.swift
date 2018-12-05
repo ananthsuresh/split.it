@@ -16,25 +16,23 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         itemTableView.delegate = self
         itemTableView.dataSource = self
-        //loadSampleItems()
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
+    // Function required from swift for tables, specifies number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Function required from swift for tables, specifies length of table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsList.count
     }
     
+    // Populates table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "ItemTableViewCell"
@@ -53,32 +51,21 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    // Used for when single row is selected from table
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        performSegue(withIdentifier: "editItemSegue", sender: indexPath.row)
     }
     
-    // Override to support editing the table view.
+    // Allows for editing each row
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             itemsList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        /*
-         else if editingStyle == .insert {
-         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-         }
-         */
     }
     
-    //MARK: Private Methods
-    
-    
-    
-    
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Populates fields if "edit" button is selected
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "editItemSegue"){
             let receiverVC = segue.destination as! AddItemViewController

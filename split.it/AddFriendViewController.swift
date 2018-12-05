@@ -8,6 +8,7 @@
 
 import UIKit
 
+// File corresponding to the "Add Friend" page
 class AddFriendViewController: UIViewController {
     
     var editIndex : Int? = -1
@@ -25,22 +26,14 @@ class AddFriendViewController: UIViewController {
         name.text = nameString
         venmoUsername.text = venmoUsernameString
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Makes sure all fields are filled before moving back to "Friend" page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let receiverVC = segue.destination as! FriendTableViewController
         if(name.text! == ""){
             let alert = UIAlertController(title: "No name", message: "Please input a name", preferredStyle: .alert)
             

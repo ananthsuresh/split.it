@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Specifies labels in each cell.  Both functions are required by swift and set to their default values.
 class AssignItemsViewControllerCellTableViewCell: UITableViewCell, UIImagePickerControllerDelegate {
 
     
@@ -21,13 +22,10 @@ class AssignItemsViewControllerCellTableViewCell: UITableViewCell, UIImagePicker
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

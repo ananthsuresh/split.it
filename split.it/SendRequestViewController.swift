@@ -10,19 +10,23 @@ import UIKit
 
 private var firstLoad = true
 
+// File corresponding to the "Send Request" page
 class SendRequestViewController: UIViewController {
     @IBOutlet weak var friendLabel: UILabel!
     @IBOutlet weak var amountOwedLabel: UILabel!
+    
+    // Sets up labels for screen.
     override func viewDidLoad() {
         super.viewDidLoad()
         if firstLoad {
             friends.removeFirst(1)
             firstLoad = false
         }
-        // Do any additional setup after loading the view.
         friendLabel.text = friends[0].name;
         amountOwedLabel.text = String(format:"%.02f", friends[0].amountOwed);
     }
+    
+    // Opens Venmo with the specified parameters in the request
     @IBAction func sendRequest(_ sender: Any) {
         let amountOwed:String = String(format:"%.02f", friends[0].amountOwed);
         let venmoUsername:String = friends[0].venmoUsername;
@@ -36,16 +40,4 @@ class SendRequestViewController: UIViewController {
             performSegue(withIdentifier: "backToStart", sender: nil)
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

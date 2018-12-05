@@ -8,6 +8,7 @@
 
 import UIKit
 
+// File used for "Add Item" page
 class AddItemViewController: UIViewController {
 
     @IBOutlet weak var itemNameField: UITextField!
@@ -22,18 +23,13 @@ class AddItemViewController: UIViewController {
         itemNameField.text = itemNameString
         priceField.text = priceString
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Make sures all fields are filled in before going back to "Item's" page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let price = Double(priceField.text!) else {
             let alert = UIAlertController(title: "Invalid price", message: "Please input a valid price", preferredStyle: .alert)
